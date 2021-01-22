@@ -3,5 +3,7 @@
 set -eu
 
 for x in frpc frps; do
-	docker build -f Dockerfile-$x . -t testcab/$x:${VERSION:-latest}
+	docker build . \
+		-f Dockerfile-$x \
+		-t testcab/$x:${VERSION:-latest}
 done
