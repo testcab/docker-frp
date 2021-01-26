@@ -1,6 +1,6 @@
 ARG FRP=frpc
-ARG FRP_VERSION=test
-FROM fatedier/$FRP:$FRP_VERSION
+ARG FRP_VERSION
+FROM fatedier/$FRP:${FRP_VERSION:-v0.35.1}
 
 ADD https://raw.githubusercontent.com/testcab/env2file/v1.0.0/env2file /env2file
 COPY docker-entrypoint.sh /docker-entrypoint.sh
