@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -eu
+
+for x in frpc frps; do
+	docker push testcab/$x:${VERSION:-latest}
+done
