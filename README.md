@@ -11,13 +11,21 @@ The config file for frp is located at `/app/frpc.ini` or `/app/frps.ini`. You ca
 #### frpc
 
 ```
-docker run --rm testcab/frpc
+docker run --rm testcab/frpc -e FRP_CONFIG_CONTENT="$(cat /etc/frp/frpc.ini)"
+```
+
+```
+kubectl run frpc --image testcab/frpc --env FRP_CONFIG_CONTENT="$(cat /etc/frp/frpc.ini)"
 ```
 
 #### frps
 
 ```
-docker run --rm testcab/frpc
+docker run --rm testcab/frps -e FRP_CONFIG_CONTENT="$(cat /etc/frp/frps.ini)"
+```
+
+```
+kubectl run frps --image testcab/frps --env FRP_CONFIG_CONTENT="$(cat /etc/frp/frps.ini)"
 ```
 
 
